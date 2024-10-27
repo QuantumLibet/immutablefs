@@ -25,9 +25,9 @@ enable()
             fi
         fi
         sudo --askpass sed -i=bckp 's/^/overlayroot=tmpfs /' /boot/firmware/cmdline.txt
-        echo -e "\nFilesystem frozen. Please reboot now.\n"
+        echo -e "\nFilesystem immutable from next reboot onwards.\n"
     else
-        echo -e "\nFilesystem already frozen. Nothing do do.\n"
+        echo -e "\nFilesystem is already immutable. Nothing do do.\n"
     fi
 }
 
@@ -46,9 +46,9 @@ disable()
             fi
         fi
         sudo --askpass sed -i=bckp 's/^overlayroot=tmpfs //' /boot/firmware/cmdline.txt
-        echo -e "\nFilesystem freeze disabled. Please reboot now.\n"
+        echo -e "\nFilesystem immutable disabled from next reboot onwards.\n"
     else
-        echo "\nFilesystem freeze not enabled. Nothing to do.\n"
+        echo "\nFilesystem is not immutable. Nothing to do.\n"
         exit 0
     fi
 }
