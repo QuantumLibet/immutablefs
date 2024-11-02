@@ -48,7 +48,7 @@ disable()
         sudo --askpass sed -i=bckp 's/^overlayroot=tmpfs //' /boot/firmware/cmdline.txt
         echo -e "\nFilesystem immutable disabled from next reboot onwards.\n"
     else
-        echo "\nFilesystem is not immutable. Nothing to do.\n"
+        echo -e "\nFilesystem is not immutable. Nothing to do.\n"
         exit 0
     fi
 }
