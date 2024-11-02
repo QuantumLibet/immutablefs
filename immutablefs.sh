@@ -9,8 +9,8 @@ enable()
     #  install overlayroot
     if dpkg -l overlayroot 2>&1 | grep -q 'no packages found'
     then
-        sudo --askpass DEBIAN_FRONTEND=noninteractive apt-get --yes -qq -o=Dpkg::Use-Pty=0 update
-        sudo --askpass DEBIAN_FRONTEND=noninteractive apt-get --yes -qq -o=Dpkg::Use-Pty=0 install overlayroot
+        sudo --askpass DEBIAN_FRONTEND=noninteractive apt-get -qq -o=Dpkg::Use-Pty=0 update
+        sudo --askpass DEBIAN_FRONTEND=noninteractive apt-get -qq -o=Dpkg::Use-Pty=0 install overlayroot
     fi
 
     # modify kernel parameters
