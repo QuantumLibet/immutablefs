@@ -20,7 +20,7 @@ enable()
         then
             if sudo mount -o remount,rw /boot/firmware  #  … unlock it
             then
-                echo "Unable to mount boot/firmware as writable"
+                echo -e "\nUnable to mount boot/firmware as writable. Aborting!\n"
                 exit 1
             fi
         fi
@@ -41,7 +41,7 @@ disable()
         then
             if sudo mount -o remount,rw /boot/firmware  #  … unlock it
             then
-                echo "Unable to mount boot/firmware as writable"
+                echo -e "\nUnable to mount boot/firmware as writable. Aborting!\n"
                 exit 1
             fi
         fi
@@ -56,7 +56,7 @@ disable()
 
 info()
 {
-    if $(grep -qE '^overlayroot=tmpfs ' /boot/firmware/cmdline.txt); then echo -e "\nFilesystem is immutable.\n"; else echo "\nFilesystem is not immutable.\n"; fi
+    if $(grep -qE '^overlayroot=tmpfs ' /boot/firmware/cmdline.txt); then echo -e "\nFilesystem is immutable.\n"; else echo -e "\nFilesystem is not immutable.\n"; fi
 }
 
 
