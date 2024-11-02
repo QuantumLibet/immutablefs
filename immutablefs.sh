@@ -60,7 +60,7 @@ info()
 }
 
 
-if [[ ${#:0} -ne 1 ]]
+if (( ! $# ))
 then
     echo -e "\nusage:  $0 [enable | disable | info]\n"
 else
